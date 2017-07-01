@@ -1,0 +1,65 @@
+.header-container {
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.site-header {
+    display: table;
+    width: 100%;
+}
+
+.site-header > div {
+    display: table-cell;
+    height: 100%;
+    min-height: 100%;
+    float: none;
+}
+
+.site-header .header-nav .nav-list {
+    z-index: 10;
+    font-size: 16px;
+}
+
+.site-header .header-nav .nav-list li {
+    padding-left: 8px;
+    padding-right: 8px;
+    cursor: pointer;
+}
+
+.site-header .header-nav .nav-list li a {
+    text-decoration-line: none;
+    color: #333;
+}
+
+.site-header .header-nav .nav-list li:hover a {
+    color: #ff6700;
+}
+
+.site-header .header-search {
+    padding-top: 9px;
+}
+
+.site-header .header-search .search-col {
+    padding-right: 0;
+}
+
+.site-header .header-search .button-col {
+    padding-left: 0;
+}
+
+.site-header .header-search .search-text {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.site-header .header-search .search-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.site-header .header-search .search-button:hover {
+    border-color: #ff6700;
+    background: #ff6700;
+    color: #fff;
+}

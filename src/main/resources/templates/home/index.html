@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="index_layout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="home_layout">
 <head>
 
 </head>
 <body>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.7/dist/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/webjars/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
 <div class="container" layout:fragment="content">
-    Testing 123
+    <div class="row">
+        <div class="col-md-3">
+            <span th:text="Testing123"></span>
+        </div>
+    </div>
 </div>
+
 </body>
 </html>

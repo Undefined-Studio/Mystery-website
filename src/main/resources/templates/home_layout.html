@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <link th:replace="fragments/common_import::head"/>
+    <link rel="stylesheet" href="/css/site-header.css" th:href="@{/css/site-header.css}"/>
+</head>
+<body>
+<div th:remove="all">
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/webjars/font-awesome/4.7.0/css/font-awesome.min.css"/>
+</div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" th:href="@{/}">Mystery商城</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a th:href="@{/book}">图册购买</a></li>
+                <li><a th:href="@{/feedback}">问题反馈</a></li>
+                <li><a th:href="@{/about}">关于我们</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a th:href="@{/login}">登录</a></li>
+                <li><a th:href="@{/register}">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="header-container">
+    <div class="container">
+        <div class="row">
+            <div class="site-header">
+                <div class="col-md-1 header-logo">
+                    <img src="/image/logo-64x64.png" th:src="@{/image/logo-64x64.png}"/>
+                </div>
+                <div class="col-md-7 header-nav">
+                    <ul class="list-unstyled list-inline nav-list">
+                        <li><a th:href="@{/book}">图册</a></li>
+                        <li><a th:href="@{/service}">服务</a></li>
+                        <li><a th:href="@{/bbs}">社区</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 header-search">
+                    <form class="form-inline" th:action="@{/search}">
+                        <div class="form-group-lg">
+                            <div class="row">
+                                <div class="col-xs-9 search-col">
+                                    <label for="search" class="hide">站内搜索</label>
+                                    <input class="form-control search-text pull-right" id="search" name="word"
+                                           placeholder="站内搜索"/>
+                                </div>
+                                <div class="col-xs-3 button-col">
+                                    <button type="submit" class="fa fa-search form-control search-button"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" layout:fragment="content">
+    Content
+</div>
+
+<div th:replace="fragments/footer::normal"></div>
+
+<div th:replace="fragments/common_import::script"></div>
+
+<div layout:fragment="scripts" th:remove="tag"></div>
+
+</body>
+</html>

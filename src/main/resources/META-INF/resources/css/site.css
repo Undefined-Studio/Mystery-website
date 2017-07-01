@@ -1,6 +1,6 @@
 body {
-    padding-top: 70px;
-    background: #fafafa;
+    padding-top: 50px;
+    background-color: #fafafa;
     min-height: 100%;
 }
 
@@ -8,5 +8,12 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding-bottom: 20px;
+}
+
+footer .info-text {
+    margin-top: 5px;
+}
+
+footer .info-text p {
+    margin-bottom: 4px;
 }
