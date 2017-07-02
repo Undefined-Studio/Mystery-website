@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <link th:replace="fragments/common_import::head"/>
+    <link rel="stylesheet" th:href="@{/css/minimum_footer.css}"/>
+</head>
+<body>
+
+<div class="container" layout:fragment="content">
+    Content
+</div>
+
+<div th:replace="fragments/footer::minimum"></div>
+
+<div th:replace="fragments/common_import::script"></div>
+
+<div layout:fragment="scripts" th:remove="tag"></div>
+
+</body>
+</html>

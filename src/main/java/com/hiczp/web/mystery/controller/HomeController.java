@@ -17,4 +17,10 @@ public class HomeController {
         //TODO 获得前八个图册
         return modelAndView.addObject("books", Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8));
     }
+
+    @GetMapping("/register")
+    public ModelAndView register(ModelAndView modelAndView) {
+        modelAndView.setViewName("/home/register");
+        return modelAndView;
+    }
 }

@@ -1,0 +1,17 @@
+footer {
+    padding-top: 20px;
+}
+
+.nf-link-area a {
+    display: inline-block;
+    padding: 0 10px 0 0;
+    color: #757575;
+}
+
+.nf-link-area li:last-child a {
+    padding: 0;
+}
+
+.nf-link-area a:hover, .nf-link-area a.current {
+    color: #333;
+}
