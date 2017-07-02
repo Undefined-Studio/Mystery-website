@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <link th:replace="fragments/common_import::head"/>
-    <link rel="stylesheet" href="/css/site-header.css" th:href="@{/css/site-header.css}"/>
+    <link rel="stylesheet" href="/css/site_header.css" th:href="@{/css/site_header.css}"/>
 </head>
 <body>
 <div th:remove="all">
@@ -42,11 +42,11 @@
                     <img src="/image/logo-64x64.png" th:src="@{/image/logo-64x64.png}"/>
                 </div>
                 <div class="col-md-7 header-nav">
-                    <ul class="list-unstyled list-inline nav-list">
-                        <li><a th:href="@{/book}">图册</a></li>
-                        <li><a th:href="@{/service}">服务</a></li>
-                        <li><a th:href="@{/bbs}">社区</a></li>
-                    </ul>
+                    <div class="list-unstyled list-inline nav-list">
+                        <a th:href="@{/book}">图册</a>
+                        <a th:href="@{/service}">服务</a>
+                        <a th:href="@{/bbs}">社区</a>
+                    </div>
                 </div>
                 <div class="col-md-4 header-search">
                     <form class="form-inline" th:action="@{/search}">
