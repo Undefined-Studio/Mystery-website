@@ -17,14 +17,6 @@ footer {
     height: 100px;
 }
 
-footer .info-text {
-    padding-top: 5px;
-}
-
-footer .info-text p {
-    margin-bottom: 4px;
-}
-
 a {
     color: #333;
 }

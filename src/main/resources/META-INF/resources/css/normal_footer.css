@@ -1,0 +1,13 @@
+footer .info-text {
+    padding-top: 5px;
+}
+
+footer .info-text p {
+    margin-bottom: 4px;
+}
+
+@media screen and (max-width: 768px) {
+    .info-text {
+        padding-left: 30px;
+    }
+}
