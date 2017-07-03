@@ -22,7 +22,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a th:href="@{/book}">图册购买</a></li>
+                <li><a th:href="@{/client}">客户端</a></li>
                 <li><a th:href="@{/feedback}">问题反馈</a></li>
                 <li><a th:href="@{/about}">关于我们</a></li>
             </ul>
@@ -53,8 +53,7 @@
                         <div class="form-group-lg">
                             <div class="row">
                                 <div class="col-xs-9 search-col">
-                                    <label for="search" class="hide">站内搜索</label>
-                                    <input class="form-control search-text pull-right" id="search" name="word"
+                                    <input class="form-control search-text pull-right" name="word" type="search"
                                            placeholder="站内搜索"/>
                                 </div>
                                 <div class="col-xs-3 button-col">

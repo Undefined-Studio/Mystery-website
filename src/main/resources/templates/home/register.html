@@ -2,14 +2,50 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="minimum_layout">
 <head>
-
+    <link rel="stylesheet" th:href="@{/css/device_frame.css}"/>
+    <link rel="stylesheet" th:href="@{/css/home_register.css}"/>
 </head>
 <body>
 <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/dist/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="/webjars/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
-<div class="container" layout:fragment="content">
-    <span th:text="Testing123"></span>
+<div class="container text-center" layout:fragment="content">
+    <div class="row wrap">
+        <div class="col-lg-offset-1 col-lg-10">
+            <div class="layout">
+                <div class="n-frame device-frame reg_frame">
+                    <div class="external-logo-area">
+                        <img src="" th:src="@{/image/logo-64x64.png}"/>
+                    </div>
+                    <div class="title-item t_c">
+                        <h2>注册 Mystery 帐号</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-offset-3 col-lg-6 register-box">
+                            <form>
+                                <div class="form-group">
+                                    <input class="form-control input-lg" type="email" placeholder="请输入邮箱"/>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control input-lg" type="password" placeholder="请输入密码"/>
+                                </div>
+                                <div class="form-group form-inline pull-left">
+                                    <input class="form-control input-lg" type="text" placeholder="图片验证码"
+                                           style="width: 204px"/>
+                                    <img src="" th:src="@{/image/code.jpg}"/>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-lg btn-primary btn-block">立即注册</button>
+                                    <p class="msg">点击"立即注册", 即表示您同意并愿意遵守 Mystery <a th:href="@{/eula}">用户协议</a> 和 <a
+                                            th:href="@{/privacy}">隐私政策</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>

@@ -1,0 +1,16 @@
+.layout {
+    background-color: white;
+}
+
+.device-frame {
+    padding: 30px 34px;
+}
+
+.external-logo-area {
+    padding-bottom: 20px;
+    display: block;
+}
+
+.register-box {
+    padding: 20px 60px;
+}
