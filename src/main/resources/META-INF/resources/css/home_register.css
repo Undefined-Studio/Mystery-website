@@ -2,6 +2,28 @@
     padding: 20px 60px;
 }
 
+.captcha-input {
+    width: 204px !important;
+}
+
+@media screen and (max-width: 768px) {
+    .register-box {
+        padding: 20px 0;
+    }
+
+    .captcha-group {
+        width: 100%;
+    }
+
+    .captcha-input {
+        width: 100% !important;
+    }
+
+    .captcha {
+        margin-top: 15px;
+    }
+}
+
 .msg {
     margin-top: 10px;
     color: #9d9d9d;

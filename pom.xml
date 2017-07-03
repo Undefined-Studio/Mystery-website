@@ -76,4 +76,15 @@
             <version>1.35.3</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-maven-plugin -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.5.4.RELEASE</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
