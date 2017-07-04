@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <link th:replace="fragments/common_import::head"/>
     <link rel="stylesheet" th:href="@{/css/site_header.css}"/>
@@ -27,9 +28,22 @@
                 <li><a th:href="@{/feedback}">问题反馈</a></li>
                 <li><a th:href="@{/about}">关于我们</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" sec:authorize="isAnonymous()">
                 <li><a th:href="@{/login}">登录</a></li>
                 <li><a th:href="@{/register}">注册</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" sec:authorize="isAuthenticated()">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                        <span sec:authentication="principal.account.nick">用户名</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/user/center}">个人中心</a></li>
+                        <li><a th:href="@{/user/favorite}">我的喜欢</a></li>
+                        <li><a th:href="@{/logout}">退出登录</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

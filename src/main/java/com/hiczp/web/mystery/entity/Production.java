@@ -1,15 +1,12 @@
 package com.hiczp.web.mystery.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by czp on 17-7-3.
  */
 @Entity
-public class Book {
+public class Production {
     @Id
     @GeneratedValue
     private long id;
@@ -22,6 +19,10 @@ public class Book {
 
     @Column(nullable = false)
     private String image;
+
+    @Column(nullable = false, length = 32)
+    @Enumerated(EnumType.STRING)
+    private ProductionType productionType;
 
     @Column(nullable = false)
     private Float price;
@@ -61,6 +62,14 @@ public class Book {
         this.image = image;
     }
 
+    public ProductionType getProductionType() {
+        return productionType;
+    }
+
+    public void setProductionType(ProductionType productionType) {
+        this.productionType = productionType;
+    }
+
     public Float getPrice() {
         return price;
     }
@@ -75,5 +84,9 @@ public class Book {
 
     public void setSort(Integer sort) {
         this.sort = sort;
+    }
+
+    public enum ProductionType {
+        BOOK
     }
 }
