@@ -14,7 +14,7 @@ public class Account {
     @GeneratedValue
     private long id;
 
-    @Column(nullable = false, length = 32)
+    @Column(unique = true, nullable = false, length = 32)
     private String username;
 
     @Column(nullable = false)

@@ -1,0 +1,17 @@
+.breadcrumb {
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    font-size: 13px;
+    line-height: 40px;
+    background-color: inherit;
+    color: #616161;
+}
+
+.breadcrumb a {
+    color: #757575;
+}
+
+.breadcrumb a:hover {
+    color: #424242
+}

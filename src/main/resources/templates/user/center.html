@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="user_center_layout">
+<head>
+
+</head>
+<body>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.7/dist/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/webjars/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+<ol class="breadcrumb" layout:fragment="user_center_breadcrumb">
+    <li class="breadcrumb-item"><a th:href="@{/}">首页</a></li>
+    <li class="breadcrumb-item active">用户中心</li>
+</ol>
+
+<div class="uc-box uc-main-box" layout:fragment="user_center_content">
+    <div class="uc-content-box portal-content-box">
+        <div class="box-bd">
+            <div class="portal-main clearfix">
+                <div class="row user-card" th:with="account=${#authentication.principal.account}">
+                    <div class="col-lg-3">
+                        <img class="avatar" src="/image/avatar/default.jpg"
+                             th:src="@{${account.avatar==null?'/image/avatar/default.jpg':account.avatar}}"
+                             width="150" height="150" th:alt-title="${account.nick}"/>
+                    </div>
+                    <div class="col-lg-9 user-info">
+                        <h2 class="username" th:text="${account.nick}">czp</h2>
+                        <p class="tip">晚上好</p>
+                        <a class="link" th:href="@{/user/user_info}">修改个人信息 ></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portal-sub">
+                <div class="row info-list">
+                    <div class="col-md-6">
+                        <div class="col-lg-4">
+                            <img src="/image/icon/user/portal-icon-1.png"
+                                 th:src="@{/image/icon/user/portal-icon-1.png}"/>
+                        </div>
+                        <div class="col-lg-8 info-text">
+                            <h3>待支付的订单：<span class="num">0</span></h3>
+                            <a href="">查看待支付订单 <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-lg-4">
+                            <img src="/image/icon/user/portal-icon-2.png"
+                                 th:src="@{/image/icon/user/portal-icon-2.png}"/>
+                        </div>
+                        <div class="col-lg-8 info-text">
+                            <h3>待收货的订单：<span class="num">0</span></h3>
+                            <a href="">查看待收货订单 <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-lg-4">
+                            <img src="/image/icon/user/portal-icon-3.png"
+                                 th:src="@{/image/icon/user/portal-icon-3.png}"/>
+                        </div>
+                        <div class="col-lg-8 info-text">
+                            <h3>待评价商品数：<span class="num">1</span></h3>
+                            <a href="">查看待评价商品 <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-lg-4">
+                            <img src="/image/icon/user/portal-icon-4.png"
+                                 th:src="@{/image/icon/user/portal-icon-4.png}"/>
+                        </div>
+                        <div class="col-lg-8 info-text">
+                            <h3>喜欢的商品：<span class="num">0</span></h3>
+                            <a href="">查看喜欢的商品 <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

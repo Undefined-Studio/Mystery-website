@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" th:each="book : ${books}" th:unless="${bookStat.last}">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" th:each="book:${books}" th:unless="${bookStat.last}">
             <div class="brick-item-container">
                 <div class="brick-item brick-item-m text-center">
                     <div class="figure-img">
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" th:each="book : ${books}" th:if="${bookStat.last}">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" th:each="book:${books}" th:if="${bookStat.last}">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="brick-item-container">

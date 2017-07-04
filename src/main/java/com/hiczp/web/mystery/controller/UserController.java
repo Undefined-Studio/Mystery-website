@@ -13,6 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class UserController {
     @GetMapping("/center")
     public ModelAndView center(ModelAndView modelAndView) {
-        return modelAndView;
+        return modelAndView.addObject("activeNavItem", "我的个人中心");
     }
 }

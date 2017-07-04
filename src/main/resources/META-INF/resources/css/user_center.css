@@ -1,0 +1,118 @@
+a {
+    color: #757575;
+}
+
+a:hover {
+    color: #ff6700;
+}
+
+.uc-box {
+    background: #fff;
+    margin-bottom: 50px;
+}
+
+.uc-sub-box {
+    padding: 36px 0;
+}
+
+.uc-main-box {
+    padding: 36px 0;
+}
+
+.uc-nav-box {
+    margin-bottom: 12px;
+}
+
+.uc-nav-box .box-hd {
+    height: 52px;
+}
+
+.uc-nav-box .box-hd .title {
+    margin: 0 48px 2px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 52px;
+    color: #333;
+}
+
+.uc-nav-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.uc-nav-list li {
+    padding: 6px 48px;
+}
+
+.uc-nav-list a {
+    color: #757575
+}
+
+.uc-nav-list a:hover {
+    color: #424242
+}
+
+.uc-nav-list li.active a {
+    color: #ff6700;
+}
+
+.uc-content-box {
+    margin: 0 48px;
+}
+
+.portal-content-box .box-bd {
+    padding-top: 24px;
+}
+
+.portal-content-box .user-info {
+    margin-top: 40px;
+    margin-bottom: 70px;
+}
+
+.portal-content-box .user-card .user-info .username {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 400;
+    color: #616161;
+}
+
+.portal-content-box .user-card .user-info .tip {
+    margin: 0 0 10px;
+    color: #b0b0b0;
+}
+
+.portal-content-box .user-card .user-info .link {
+    font-size: 12px;
+    color: #ff6700;
+}
+
+.portal-content-box .user-card .avatar {
+    padding: 4px;
+    border: 1px solid #e0e0e0;
+    border-radius: 150px;
+}
+
+.portal-content-box .portal-sub {
+    border-top: 1px solid #e0e0e0;
+}
+
+.portal-content-box .info-list {
+    padding-top: 60px;
+    color: #757575;
+}
+
+.portal-content-box .info-list .info-text {
+    padding-top: 30px;
+    padding-bottom: 80px;
+}
+
+.portal-content-box .info-list h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.portal-content-box .info-list .num {
+    color: #ff6700;
+}

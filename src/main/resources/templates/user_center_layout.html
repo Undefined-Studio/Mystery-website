@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="home_layout">
+<head>
+    <link rel="stylesheet" th:href="@{/css/breadcrumb.css}"/>
+    <link rel="stylesheet" th:href="@{/css/user_center.css}"/>
+</head>
+<body>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.7/dist/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/webjars/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+<div class="container home-main" layout:fragment="content">
+    <ol class="breadcrumb" layout:fragment="user_center_breadcrumb">
+        Breadcrumb
+    </ol>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="uc-box uc-sub-box">
+                <div class="uc-nav-box">
+                    <div class="box-hd">
+                        <h3 class="title">订单中心</h3>
+                    </div>
+                    <div class="box-bd">
+                        <ul class="uc-nav-list">
+                            <li><a href="">我的订单</a></li>
+                            <li><a href="">评价晒单</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="uc-nav-box">
+                    <div class="box-hd">
+                        <h3 class="title">个人中心</h3>
+                    </div>
+                    <div class="box-bd">
+                        <ul class="uc-nav-list">
+                            <li><a href="">我的个人中心</a></li>
+                            <li><a href="">消息通知</a></li>
+                            <li><a href="">代金券</a></li>
+                            <li><a href="">喜欢的商品</a></li>
+                            <li><a href="">收货地址</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="uc-nav-box">
+                    <div class="box-hd">
+                        <h3 class="title">售后服务</h3>
+                    </div>
+                    <div class="box-bd">
+                        <ul class="uc-nav-list">
+                            <li><a href="">服务记录</a></li>
+                            <li><a href="">申请服务</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="uc-nav-box">
+                    <div class="box-hd">
+                        <h3 class="title">账户管理</h3>
+                    </div>
+                    <div class="box-bd">
+                        <ul class="uc-nav-list">
+                            <li><a href="">个人信息</a></li>
+                            <li><a href="">修改密码</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-9">
+            <div class="uc-box uc-main-box" layout:fragment="user_center_content">
+                Content
+            </div>
+        </div>
+    </div>
+</div>
+
+<div layout:fragment="scripts">
+    <script th:inline="javascript">
+        var activeNavItem = /*[[${activeNavItem}]]*/ null;
+        jQuery(".uc-nav-box .uc-nav-list li").each(function () {
+            var li = jQuery(this);
+            if (li.text() === activeNavItem) {
+                li.addClass("active");
+            }
+        });
+    </script>
+    <div layout:fragment="user_center_scripts" th:remove="tag">
+
+    </div>
+</div>
+
+</body>
+</html>
