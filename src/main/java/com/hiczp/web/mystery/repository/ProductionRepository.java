@@ -8,6 +8,6 @@ import java.util.List;
 /**
  * Created by czp on 17-7-3.
  */
-public interface BookRepository extends PagingAndSortingRepository<Production, Long> {
+public interface ProductionRepository extends PagingAndSortingRepository<Production, Long> {
     List<Production> findTop8ByOrderBySortDesc();
 }
