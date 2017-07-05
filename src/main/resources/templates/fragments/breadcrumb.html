@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.7/dist/css/bootstrap.min.css"/>
+
+<ol class="breadcrumb" th:fragment="normal(breadCrumbs)">
+    <li class="breadcrumb-item" th:each="breadCrumb:${breadCrumbs}"
+        th:classappend="${breadCrumbStat.last?'active':null}">
+        <a th:unless="${breadCrumbStat.last}" th:text="${breadCrumb.name}" th:href="@{${breadCrumb.link}}">面包屑内容</a>
+        <span th:if="${breadCrumbStat.last}" th:text="${breadCrumb.name}">最后一个面包屑</span>
+    </li>
+</ol>
+
+</body>
+</html>

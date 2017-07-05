@@ -10,9 +10,7 @@
 <link rel="stylesheet" href="/webjars/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
 <div class="container home-main" layout:fragment="content">
-    <ol class="breadcrumb" layout:fragment="user_center_breadcrumb">
-        Breadcrumb
-    </ol>
+    <ol th:replace="fragments/breadcrumb::normal(${breadCrumbs})"></ol>
 
     <div class="row">
         <div class="col-lg-3">
@@ -69,7 +67,7 @@
 
         <div class="col-lg-9">
             <div class="uc-box uc-main-box" layout:fragment="user_center_content">
-                Content
+                user_center_content
             </div>
         </div>
     </div>
