@@ -1,5 +1,6 @@
 package com.hiczp.web.mystery.controller;
 
+import com.hiczp.web.mystery.annotation.ActiveNavItem;
 import com.hiczp.web.mystery.annotation.BreadCrumbs;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class UserController {
     @GetMapping("/center")
     @BreadCrumbs(names = {"用户中心"})
+    @ActiveNavItem("我的个人中心")
     public ModelAndView center(ModelAndView modelAndView) {
-        return modelAndView.addObject("activeNavItem", "我的个人中心");
+        return modelAndView;
     }
 }

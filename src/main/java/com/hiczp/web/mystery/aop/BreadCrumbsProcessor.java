@@ -3,10 +3,8 @@ package com.hiczp.web.mystery.aop;
 import com.hiczp.web.mystery.annotation.BreadCrumbs;
 import com.hiczp.web.mystery.model.BreadCrumb;
 import org.apache.commons.lang3.ArrayUtils;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.reflect.MethodSignature;
+import org.aspectj.lang.annotation.Before;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
@@ -19,15 +17,13 @@ import java.util.List;
  */
 @Aspect
 @Configuration
-public class BreadCrumbsGenerator {
-    @Around("execution(org.springframework.web.servlet.ModelAndView com.hiczp.web.mystery.controller.*.*(..)) && @annotation(com.hiczp.web.mystery.annotation.BreadCrumbs)")
-    public Object generateBreadCrumb(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        ModelAndView modelAndView = (ModelAndView) proceedingJoinPoint.proceed();
+public class BreadCrumbsProcessor {
+    @Before(value = "execution(org.springframework.web.servlet.ModelAndView com.hiczp.web.mystery.controller.*.*(..)) && @target(breadCrumbsAnnotationOnClass) && @annotation(breadCrumbsAnnotationOnMethod) && args(modelAndView,..)",
+            argNames = "breadCrumbsAnnotationOnClass, breadCrumbsAnnotationOnMethod, modelAndView")
+    public void generateBreadCrumb(BreadCrumbs breadCrumbsAnnotationOnClass, BreadCrumbs breadCrumbsAnnotationOnMethod, ModelAndView modelAndView) {
         if (modelAndView.getView() instanceof RedirectView) {
-            return modelAndView;
+            return;
         }
-        BreadCrumbs breadCrumbsAnnotationOnClass = proceedingJoinPoint.getTarget().getClass().getAnnotation(BreadCrumbs.class);
-        BreadCrumbs breadCrumbsAnnotationOnMethod = ((MethodSignature) proceedingJoinPoint.getSignature()).getMethod().getAnnotation(BreadCrumbs.class);
         String[] names = ArrayUtils.addAll(breadCrumbsAnnotationOnClass.names(), breadCrumbsAnnotationOnMethod.names());
         String[] links = ArrayUtils.addAll(breadCrumbsAnnotationOnClass.links(), breadCrumbsAnnotationOnMethod.links());
         List<BreadCrumb> breadCrumbs = new ArrayList<>(names.length);
@@ -35,6 +31,6 @@ public class BreadCrumbsGenerator {
             String link = i >= links.length ? null : links[i];
             breadCrumbs.add(new BreadCrumb(names[i], link));
         }
-        return modelAndView.addObject("breadCrumbs", breadCrumbs);
+        modelAndView.addObject("breadCrumbs", breadCrumbs);
     }
 }
