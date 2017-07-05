@@ -4,9 +4,9 @@
 
 <ol class="breadcrumb" th:fragment="normal(breadCrumbs)">
     <li class="breadcrumb-item" th:each="breadCrumb:${breadCrumbs}"
-        th:classappend="${breadCrumbStat.last?'active':null}">
-        <a th:unless="${breadCrumbStat.last}" th:text="${breadCrumb.name}" th:href="@{${breadCrumb.link}}">面包屑内容</a>
-        <span th:if="${breadCrumbStat.last}" th:text="${breadCrumb.name}">最后一个面包屑</span>
+        th:with="name=${breadCrumb.name},link=${breadCrumb.link}" th:classappend="${breadCrumbStat.last?'active':null}">
+        <a th:if="${link}" th:text="${name}" th:href="@{${link}}">有链接的面包屑</a>
+        <span th:unless="${link}" th:text="${name}" th:remove="tag">无链接的面包屑</span>
     </li>
 </ol>
 
