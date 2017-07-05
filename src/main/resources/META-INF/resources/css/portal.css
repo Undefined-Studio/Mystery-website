@@ -1,0 +1,55 @@
+.portal-content-box .box-bd {
+    padding-top: 24px;
+}
+
+.portal-content-box .user-info {
+    margin-top: 40px;
+    margin-bottom: 70px;
+}
+
+.portal-content-box .user-card .user-info .username {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 400;
+    color: #616161;
+}
+
+.portal-content-box .user-card .user-info .tip {
+    margin: 0 0 10px;
+    color: #b0b0b0;
+}
+
+.portal-content-box .user-card .user-info .link {
+    font-size: 12px;
+    color: #ff6700;
+}
+
+.portal-content-box .user-card .avatar {
+    padding: 4px;
+    border: 1px solid #e0e0e0;
+    border-radius: 150px;
+}
+
+.portal-content-box .portal-sub {
+    border-top: 1px solid #e0e0e0;
+}
+
+.portal-content-box .info-list {
+    padding-top: 60px;
+    color: #757575;
+}
+
+.portal-content-box .info-list .info-text {
+    padding-top: 30px;
+    padding-bottom: 80px;
+}
+
+.portal-content-box .info-list h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.portal-content-box .info-list .num {
+    color: #ff6700;
+}
