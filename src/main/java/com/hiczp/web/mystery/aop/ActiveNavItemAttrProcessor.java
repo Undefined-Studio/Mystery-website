@@ -15,7 +15,7 @@ import org.springframework.web.servlet.view.RedirectView;
 public class ActiveNavItemAttrProcessor {
     @Before(value = "execution(org.springframework.web.servlet.ModelAndView com.hiczp.web.mystery.controller.*.*(..)) && @annotation(activeNavItem) && args(modelAndView,..)")
     public void addActiveNavItemAttr(ActiveNavItem activeNavItem, ModelAndView modelAndView) {
-        if (modelAndView.getView() instanceof RedirectView) {
+        if (modelAndView.getView() instanceof RedirectView || modelAndView.getModel().get("activeNavItem") != null) {
             return;
         }
         modelAndView.addObject("activeNavItem", activeNavItem.value());

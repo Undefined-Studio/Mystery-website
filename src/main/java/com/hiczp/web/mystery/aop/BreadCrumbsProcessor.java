@@ -21,7 +21,7 @@ public class BreadCrumbsProcessor {
     @Before(value = "execution(org.springframework.web.servlet.ModelAndView com.hiczp.web.mystery.controller.*.*(..)) && @target(breadCrumbsAnnotationOnClass) && @annotation(breadCrumbsAnnotationOnMethod) && args(modelAndView,..)",
             argNames = "breadCrumbsAnnotationOnClass, breadCrumbsAnnotationOnMethod, modelAndView")
     public void generateBreadCrumb(BreadCrumbs breadCrumbsAnnotationOnClass, BreadCrumbs breadCrumbsAnnotationOnMethod, ModelAndView modelAndView) {
-        if (modelAndView.getView() instanceof RedirectView) {
+        if (modelAndView.getView() instanceof RedirectView || modelAndView.getModel().get("breadCrumbs") != null) {
             return;
         }
         String[] names = ArrayUtils.addAll(breadCrumbsAnnotationOnClass.names(), breadCrumbsAnnotationOnMethod.names());
