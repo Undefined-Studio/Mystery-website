@@ -23,7 +23,7 @@ public class UserAPIController {
     @GetMapping("/myInfo")
     public Account myInfo() {
         //为了防止 SecurityContext 中的 Account 信息过时, 此处再查一次数据库
-        long id = ((MysteryUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getAccount().getId();
+        long id = ((MysteryUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId();
         Account account = accountRepository.findOne(id);
         account.setPassword(null);
         return account;
