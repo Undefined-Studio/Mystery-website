@@ -20,4 +20,11 @@ public class UserController {
     public ModelAndView center(ModelAndView modelAndView) {
         return modelAndView;
     }
+
+    @GetMapping("/coupon/list")
+    @BreadCrumbs(names = {"代金券", "我的代金券"})
+    @ActiveNavItem("代金券")
+    public ModelAndView couponList(ModelAndView modelAndView) {
+        return modelAndView;
+    }
 }

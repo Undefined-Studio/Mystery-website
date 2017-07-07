@@ -1,5 +1,7 @@
 package com.hiczp.web.mystery.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,6 +19,7 @@ public class Account {
     @Column(unique = true, nullable = false, length = 32)
     private String username;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @Column(nullable = false)
     private String password;
 
