@@ -1,8 +1,8 @@
 package com.hiczp.web.mystery.service;
 
 import com.hiczp.web.mystery.entity.Account;
-import com.hiczp.web.mystery.model.MysteryUser;
 import com.hiczp.web.mystery.repository.AccountRepository;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -27,6 +27,6 @@ public class DefaultUserDetailsService implements UserDetailsService {
         if (account == null) {
             throw new UsernameNotFoundException(String.format("Username '%s' not found", username));
         }
-        return new MysteryUser(account.getUsername(), account.getPassword(), Arrays.asList(() -> "ROLE_USER"), account);
+        return new User(account.getUsername(), account.getPassword(), Arrays.asList(() -> "ROLE_USER"));
     }
 }

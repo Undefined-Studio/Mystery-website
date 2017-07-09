@@ -1,5 +1,5 @@
 # 无需验证
-##/api/login  POST  未实现
+##/api/login  POST
 param
 
     username
@@ -7,20 +7,24 @@ param
 
 result
 
+    timestamp
     code
     message
-    data [cookies]
+    data {SESSION}
 
 code 为 0 表示登录成功
 message 为提示信息
-data 为数组, 登录成功时包含 cookies
+data 为 map, 登录成功时包含 SESSION
 
 登录
 
-##/api/login/testLogin   GET   未实现
+##/api/checkLogin   GET
 result
 
-    isLogined
+    timestamp
+    code
+    message
+    data {isAuthenticated}
 
 验证登录
 

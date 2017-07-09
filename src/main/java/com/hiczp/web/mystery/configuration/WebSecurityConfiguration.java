@@ -24,13 +24,11 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         //rest
         http.authorizeRequests().antMatchers("/api/user/**").fullyAuthenticated()
-                .and()
-                .httpBasic();
+                .and().httpBasic();
 
         //page
         http.authorizeRequests().antMatchers("/user/**").authenticated()
-                .and()
-                .formLogin().defaultSuccessUrl("/")
+                .and().formLogin().defaultSuccessUrl("/")
                 .and().rememberMe()
                 .and().logout().logoutSuccessUrl("/");
     }
