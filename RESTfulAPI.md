@@ -59,6 +59,8 @@ example
 
     {"timestamp":1499664195631,"code":0,"message":"","data":{"isAuthenticated":true}}
     
+feature
+
 验证登录
 
 ## /api/game/gameVersion GET    未需求
@@ -80,6 +82,8 @@ example
 
     {"id":1,"username":"admin","nick":"czp","avatar":"/image/avatar/user/rjxXGgS5L9448DAzQToW.jpg","point":0,"gameFlag":null}
 
+feature
+
 获取用户自己的个人信息
 
 ## /api/user/game/levelClear  GET 未实现
@@ -93,4 +97,8 @@ result
     
 id 为关卡编号
 
+feature
+
 用户通关某一关卡
+
+同时获得通关该关卡得到的奖励
