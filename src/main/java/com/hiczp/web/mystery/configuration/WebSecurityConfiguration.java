@@ -12,14 +12,21 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
  */
 @Configuration
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
+    private static HttpSecurity httpSecurity;   //把 HttpSecurity 存下来, 以取得其中的 sharedObject
     private UserDetailsService userDetailsService;
 
     public WebSecurityConfiguration(UserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
 
+    public static HttpSecurity getHttpSecurity() {
+        return httpSecurity;
+    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        httpSecurity = http;
+
         http.csrf().disable();
 
         //rest
