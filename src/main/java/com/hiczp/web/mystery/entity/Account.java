@@ -2,10 +2,8 @@ package com.hiczp.web.mystery.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 /**
  * Created by czp on 17-7-4.
@@ -34,6 +32,9 @@ public class Account {
 
     @Column(length = 1024)
     private String gameFlag;
+
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "account")
+    private Set<CouponInstance> couponInstances;
 
     public long getId() {
         return id;
@@ -89,5 +90,13 @@ public class Account {
 
     public void setGameFlag(String gameFlag) {
         this.gameFlag = gameFlag;
+    }
+
+    public Set<CouponInstance> getCouponInstances() {
+        return couponInstances;
+    }
+
+    public void setCouponInstances(Set<CouponInstance> couponInstances) {
+        this.couponInstances = couponInstances;
     }
 }

@@ -9,5 +9,5 @@ import java.util.List;
  * Created by czp on 17-7-3.
  */
 public interface ProductionRepository extends PagingAndSortingRepository<Production, Long> {
-    List<Production> findTop8ByOrderBySortDesc();
+    List<Production> findTop8ByProductionTypeOrderBySortDesc(Production.ProductionType productionType);
 }

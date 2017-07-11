@@ -1,5 +1,6 @@
 package com.hiczp.web.mystery.controller;
 
+import com.hiczp.web.mystery.entity.Production;
 import com.hiczp.web.mystery.repository.ProductionRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ public class HomeController {
     @GetMapping("/")
     public ModelAndView index(ModelAndView modelAndView) {
         modelAndView.setViewName("/home/index");
-        return modelAndView.addObject("books", productionRepository.findTop8ByOrderBySortDesc());
+        return modelAndView.addObject("books", productionRepository.findTop8ByProductionTypeOrderBySortDesc(Production.ProductionType.BOOK));
     }
 
     @GetMapping("/register")
