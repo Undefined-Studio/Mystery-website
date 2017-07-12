@@ -18,3 +18,20 @@
 .ecard-table .item-empty {
     text-align: center;
 }
+
+.section-faq {
+    padding: 25px 0;
+}
+
+.section-faq h3 {
+    margin: 0 0 .75em;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.section-faq p {
+    margin: 0 0 2em 30px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #757575;
+}

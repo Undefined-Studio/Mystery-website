@@ -16,6 +16,7 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
                 .setCachePeriod(0);   //用户头像不缓存
 
         registry.addResourceHandler("/image/book/**")
-                .addResourceLocations("file:./resources/image/book/");
+                .addResourceLocations("file:./resources/image/book/")
+                .setCachePeriod(0); //图册封面不缓存
     }
 }

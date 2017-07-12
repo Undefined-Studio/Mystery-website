@@ -38,4 +38,11 @@ public class UserController {
     public ModelAndView couponList(ModelAndView modelAndView) {
         return modelAndView.addObject("couponInstances", couponInstanceRepository.findByAccount_Username(SecurityContextHolder.getContext().getAuthentication().getName()));
     }
+
+    @GetMapping("/coupon/help")
+    @BreadCrumbs(names = {"代金券", "常见问题"})
+    @ActiveNavItem("代金券")
+    public ModelAndView couponHelp(ModelAndView modelAndView) {
+        return modelAndView;
+    }
 }

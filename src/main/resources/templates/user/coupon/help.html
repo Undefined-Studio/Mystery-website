@@ -14,10 +14,10 @@
             <h1 class="title">代金券</h1>
             <div class="more clearfix">
                 <ul class="filter-list">
-                    <li class="first active">
+                    <li class="first">
                         <a th:href="@{/user/coupon/list}">我的代金券</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a th:href="@{/user/coupon/help}">常见问题</a>
                     </li>
                 </ul>
@@ -25,27 +25,16 @@
         </div>
 
         <div class="box-bd">
-            <table class="table table-striped table-responsive ecard-table">
-                <thead>
-                <tr>
-                    <th>券号</th>
-                    <th>面值（元）</th>
-                    <th>余额（元）</th>
-                    <th>操作</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:if="${couponInstances}" th:each="couponInstance:${couponInstances}">
-                    <td th:text="${couponInstance.id}">id</td>
-                    <td th:text="${couponInstance.coupon.value}">value</td>
-                    <td th:text="${couponInstance.balance}">balance</td>
-                    <td><a href="">查看详情</a></td>
-                </tr>
-                <tr th:unless="${couponInstances}">
-                    <td class="item-empty" colspan="5">暂无记录</td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="section-faq">
+                <h3>Q：代金券怎么使用？</h3>
+                <p>您在提交订单时，选择使用代金券，即可看到您可使用的代金券。在不超过订单金额的情况下，同类代金券可以不限数量叠加使用。</p>
+                <h3>Q：代金券的适用范围是什么？</h3>
+                <p>代金券可用于购买实物商品。</p>
+                <h3>Q：代金券的使用有效期？</h3>
+                <p>您可以在代金券的有效期及余额内，不限次数重复使用。</p>
+                <h3>Q：使用代金券购物，产生退款怎么办？</h3>
+                <p>使用代金券购物产生的退货，退款金额将原路返回，系统优先返还代金券支付金额。即代金券支付的部分金额退还至原有代金券，现金支付的部分金额退还至原有银行卡或者支付宝。</p>
+            </div>
         </div>
     </div>
 </div>
