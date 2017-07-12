@@ -60,3 +60,48 @@ a:hover {
 .uc-content-box {
     margin: 0 48px;
 }
+
+.uc-content-box .box-hd .title {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 68px;
+    color: #757575;
+}
+
+.uc-content-box .box-hd .more {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.uc-content-box .box-hd .filter-list {
+    float: left;
+    margin: 0;
+    padding: 18px 0;
+    list-style-type: none;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.uc-content-box .box-hd .filter-list li {
+    float: left;
+    padding: 0 20px;
+    border-left: 1px solid #e0e0e0;
+    color: #757575;
+}
+
+.uc-content-box .box-hd .filter-list li.first {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.uc-content-box .box-hd .filter-list li.active {
+    color: #ff6700;
+}
+
+.uc-content-box .box-hd .filter-list li.active a {
+    color: #ff6700;
+}
+
+.uc-content-box .box-hd .filter-list a:hover {
+    color: #333;
+}

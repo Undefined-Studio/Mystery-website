@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="user_center_layout">
+<head>
+    <link rel="stylesheet" href="/css/ecard.css" th:href="@{/css/ecard.css}"/>
+</head>
+<body>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.7/dist/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/webjars/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+<div class="uc-box uc-main-box" layout:fragment="user_center_content">
+    <div class="uc-content-box portal-content-box">
+        <div class="box-hd">
+            <h1 class="title">现金券</h1>
+            <div class="more clearfix">
+                <ul class="filter-list">
+                    <li class="first active">
+                        <a href="">我的现金券</a>
+                    </li>
+                    <li class="">
+                        <a href="">常见问题</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="box-bd">
+            <table class="table table-striped table-responsive ecard-table">
+                <thead>
+                <tr>
+                    <th>券号</th>
+                    <th>面值（元）</th>
+                    <th>余额（元）</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${couponInstances}" th:each="couponInstance:${couponInstances}">
+                    <td th:text="${couponInstance.id}">id</td>
+                    <td th:text="${couponInstance.coupon.value}">value</td>
+                    <td th:text="${couponInstance.balance}">balance</td>
+                    <td><a href="">查看详情</a></td>
+                </tr>
+                <tr th:unless="${couponInstances}">
+                    <td class="item-empty" colspan="5">暂无记录</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
