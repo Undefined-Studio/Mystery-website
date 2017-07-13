@@ -7,6 +7,10 @@
 
     {"timestamp":1499665184697,"status":500,"error":"Internal Server Error","exception":"java.lang.NullPointerException","message":"No message available","path":"/api/checkLogin"}
 
+若请求参数缺失或不合法(为 null 或类型不匹配), 会返回类似如下结果(HttpStatus 为 400)
+
+    {"timestamp":1499922767486,"code":-400,"message":"IllegalArgument"}
+
 凭证可用 cookie 方式, 或使用 HttpBasic 方式.
 
 cookie 方式需要首先通过登录 API 得到 cookie 名称和值, 每个访问都需要带有此 cookie.

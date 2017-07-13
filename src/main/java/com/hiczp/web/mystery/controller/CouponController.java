@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 @RequestMapping("/user/coupon")
-@BreadCrumbs(names = {"首页", "代金券"}, links = {"/"})
+@BreadCrumbs(names = {"首页", "代金券"}, links = "/")
 public class CouponController {
     private CouponInstanceRepository couponInstanceRepository;
 
@@ -23,14 +23,14 @@ public class CouponController {
     }
 
     @GetMapping("/list")
-    @BreadCrumbs(names = {"我的代金券"})
+    @BreadCrumbs(names = "我的代金券")
     @ActiveNavItem("代金券")
     public ModelAndView couponList(ModelAndView modelAndView) {
         return modelAndView.addObject("couponInstances", couponInstanceRepository.findByAccount_Username(SecurityContextHolder.getContext().getAuthentication().getName()));
     }
 
     @GetMapping("/help")
-    @BreadCrumbs(names = {"常见问题"})
+    @BreadCrumbs(names = "常见问题")
     @ActiveNavItem("代金券")
     public ModelAndView couponHelp(ModelAndView modelAndView) {
         return modelAndView;

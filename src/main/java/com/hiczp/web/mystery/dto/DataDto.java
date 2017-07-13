@@ -10,7 +10,7 @@ public class DataDto extends ResponseDto {
     private Map<String, Object> data = new HashMap<>();
 
     public DataDto() {
-
+        super();
     }
 
     public DataDto(Map<String, Object> data) {
@@ -28,8 +28,7 @@ public class DataDto extends ResponseDto {
     }
 
     public DataDto(int code, String message) {
-        setCode(code);
-        setMessage(message);
+        super(code, message);
     }
 
     public DataDto(int code, String message, Map<String, Object> data) {

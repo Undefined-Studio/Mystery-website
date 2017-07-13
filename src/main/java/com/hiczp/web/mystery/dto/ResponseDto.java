@@ -12,6 +12,15 @@ public class ResponseDto {
 
     private String message = "";
 
+    public ResponseDto() {
+
+    }
+
+    public ResponseDto(int code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
     public Timestamp getTimestamp() {
         return timestamp;
     }

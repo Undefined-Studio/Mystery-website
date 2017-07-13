@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 @RequestMapping("/user")
-@BreadCrumbs(names = {"首页"}, links = {"/"})
+@BreadCrumbs(names = "首页", links = "/")
 public class UserController {
     private AccountRepository accountRepository;
 
@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @GetMapping("/center")
-    @BreadCrumbs(names = {"用户中心"})
+    @BreadCrumbs(names = "用户中心")
     @ActiveNavItem("我的个人中心")
     public ModelAndView center(ModelAndView modelAndView) {
         return modelAndView.addObject("account", accountRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName()));
