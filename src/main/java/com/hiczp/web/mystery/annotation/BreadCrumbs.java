@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface BreadCrumbs {
-    String[] names();
+    String[] names() default {};
 
     String[] links() default {};
 }
