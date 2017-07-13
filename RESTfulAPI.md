@@ -86,7 +86,7 @@ feature
 
 获取用户自己的个人信息
 
-## /api/user/game/levelClear  GET 未实现
+## /api/user/game/levelClear  POST 未实现
 param
 
     id
