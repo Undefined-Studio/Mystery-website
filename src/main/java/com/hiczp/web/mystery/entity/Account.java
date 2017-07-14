@@ -1,6 +1,6 @@
 package com.hiczp.web.mystery.entity;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -17,7 +17,7 @@ public class Account {
     @Column(unique = true, nullable = false, length = 32)
     private String username;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonIgnore
     @Column(nullable = false)
     private String password;
 
@@ -27,12 +27,10 @@ public class Account {
     @Column
     private String avatar;
 
-    @Column
-    private int point = 0;
-
     @Column(length = 1024)
     private String gameFlag;
 
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "account")
     private Set<CouponInstance> couponInstances;
 
@@ -74,14 +72,6 @@ public class Account {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
-    }
-
-    public int getPoint() {
-        return point;
-    }
-
-    public void setPoint(int point) {
-        this.point = point;
     }
 
     public String getGameFlag() {

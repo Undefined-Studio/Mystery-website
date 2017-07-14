@@ -2,6 +2,7 @@ package com.hiczp.web.mystery.api;
 
 import com.hiczp.web.mystery.configuration.WebSecurityConfiguration;
 import com.hiczp.web.mystery.dto.DataDto;
+import com.hiczp.web.mystery.dto.ResponseDto;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,7 +23,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 @RequestMapping("/api")
 public class LoginController {
     @PostMapping("/login")
-    public DataDto login(String username, String password) {
+    public ResponseDto login(String username, String password) {
         SecurityContext securityContext = SecurityContextHolder.getContext();
         try {
             UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(username, password);
@@ -31,7 +32,7 @@ public class LoginController {
             return new DataDto().put("SESSION", RequestContextHolder.currentRequestAttributes().getSessionId());
         } catch (AuthenticationException e) {
             securityContext.setAuthentication(null);
-            return new DataDto(1, e.getMessage());
+            return new ResponseDto(1, e.getMessage());
         }
     }
 

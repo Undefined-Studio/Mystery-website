@@ -20,6 +20,16 @@ public class CouponInstance {
     @Column(nullable = false)
     private Float balance;
 
+    public CouponInstance() {
+
+    }
+
+    public CouponInstance(Coupon coupon, Account account, Float balance) {
+        this.coupon = coupon;
+        this.account = account;
+        this.balance = balance;
+    }
+
     public long getId() {
         return id;
     }

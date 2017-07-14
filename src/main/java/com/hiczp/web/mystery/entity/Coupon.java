@@ -1,5 +1,7 @@
 package com.hiczp.web.mystery.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -18,6 +20,7 @@ public class Coupon {
     @Column(nullable = false)
     private Float value;
 
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "coupon")
     private Set<CouponInstance> couponInstances;
 

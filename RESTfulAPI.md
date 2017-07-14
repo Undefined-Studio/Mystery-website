@@ -19,6 +19,8 @@ HttpBasic 方式:
 
     http://username:password@localhost:8080/someAuthenticationRequestedAPI
 
+服务端存储的 Session 有效期七天, 有效的 API 访问会刷新有效期. 请在客户端开启前验证一次登录.
+
 # 无需验证
 ##/api/login  POST
 param
@@ -43,9 +45,9 @@ message 为提示信息
 
 data 为 map, 登录成功时包含 SESSION, 即 cookie 的值
 
-result(fail)
+error
 
-    {"timestamp":1499663913341,"code":1,"message":"Bad credentials","data":{}}
+    1   Bad credentials
 
 feature
 
@@ -84,22 +86,36 @@ result
     
 example
 
-    {"id":1,"username":"admin","nick":"czp","avatar":"/image/avatar/user/rjxXGgS5L9448DAzQToW.jpg","point":0,"gameFlag":null}
+    {"id":1,"username":"admin","nick":"czp","avatar":"/image/avatar/user/rjxXGgS5L9448DAzQToW.jpg","gameFlag":"[1,2]"}
 
 feature
 
 获取用户自己的个人信息
 
-## /api/user/game/levelClear  POST 未实现
+## /api/user/game/levelClear  POST
 param
 
     id
-    
+
+id 为关卡编号
+
 result
 
-    获得的物品(未设计)
-    
-id 为关卡编号
+    timestamp
+    code
+    message
+    data {couponInstance}
+
+当通关有优惠券时, couponInstance 为优惠券实例, 否则无此字段.
+
+example
+
+    {"timestamp":1500007260854,"code":0,"message":"","data":{"couponInstance":{"id":7,"coupon":{"id":2,"name":"通关奖励代金券","value":10.0},"account":{"id":1,"username":"admin","nick":"czp","avatar":"/image/avatar/user/rjxXGgS5L9448DAzQToW.jpg","gameFlag":"[2]"},"balance":10.0}}}
+
+error
+
+    1   No such level
+    2   Already cleared this level
 
 feature
 

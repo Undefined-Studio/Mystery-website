@@ -25,10 +25,6 @@ public class UserAPIController {
 
     @GetMapping("/myInfo")
     public Account myInfo() {
-        Account account = accountRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
-        //修改 entity 的值前需要先 detach 以防止修改结果被回写数据库
-        entityManager.detach(account);
-        account.setPassword(null);
-        return account;
+        return accountRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
     }
 }

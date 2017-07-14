@@ -24,6 +24,9 @@ public class Production {
     @Enumerated(EnumType.STRING)
     private ProductionType productionType;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    private Level level;
+
     @Column(nullable = false)
     private Float price;
 
@@ -68,6 +71,14 @@ public class Production {
 
     public void setProductionType(ProductionType productionType) {
         this.productionType = productionType;
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
     }
 
     public Float getPrice() {
