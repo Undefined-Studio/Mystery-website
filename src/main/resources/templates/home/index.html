@@ -16,53 +16,55 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" th:each="book:${books}" th:unless="${bookStat.last}">
-            <div class="brick-item-container">
-                <div class="brick-item brick-item-m text-center">
-                    <div class="figure-img">
-                        <a href=""><img src="" class="img-responsive center-block" th:src="@{${book.image}}"/></a>
-                    </div>
-                    <h3 class="title"><a href="" th:text="${book.name}">这是产品标题</a></h3>
-                    <p class="desc" th:text="${book.description}">高端大气上档次的图册</p>
-                    <p class="price"><span class="num" th:text="${book.price}">2333</span>元</p>
-                    <div class="review-wrapper">
-                        <a href="">
-                            <p class="review">你们弄的这个东西啊, Excited! 你们还是要提高自己的姿势水平! 将...</p>
-                            <p class="author">来自于 长者 的评价</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" th:each="book:${books}" th:if="${bookStat.last}">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="brick-item-container">
-                        <div class="brick-item brick-item-s">
-                            <div class="figure-img">
-                                <a href=""><img src="" class="img-responsive center-block"
-                                                th:src="@{${book.image}}"/></a>
-                            </div>
-                            <h3 class="title"><a href="" th:text="${book.name}">这是一个很长的产品标题</a></h3>
-                            <p class="price"><span class="num" th:text="${book.price}">1234</span>元</p>
+        <th:block th:each="book:${books}">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" th:unless="${bookStat.last}">
+                <div class="brick-item-container">
+                    <div class="brick-item brick-item-m text-center">
+                        <div class="figure-img">
+                            <a href=""><img src="" class="img-responsive center-block" th:src="@{${book.image}}"/></a>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="brick-item-container">
-                        <div class="brick-item brick-item-s">
-                            <div class="figure-more">
-                                <a href=""><i class="fa fa-arrow-circle-o-right"></i></a>
-                            </div>
-                            <a href="" class="more">
-                                浏览更多
-                                <small>热门</small>
+                        <h3 class="title"><a href="" th:text="${book.name}">这是产品标题</a></h3>
+                        <p class="desc" th:text="${book.description}">高端大气上档次的图册</p>
+                        <p class="price"><span class="num" th:text="${book.price}">2333</span>元</p>
+                        <div class="review-wrapper">
+                            <a href="">
+                                <p class="review">你们弄的这个东西啊, Excited! 你们还是要提高自己的姿势水平! 将...</p>
+                                <p class="author">来自于 长者 的评价</p>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" th:if="${bookStat.last}">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="brick-item-container">
+                            <div class="brick-item brick-item-s">
+                                <div class="figure-img">
+                                    <a href=""><img src="" class="img-responsive center-block"
+                                                    th:src="@{${book.image}}"/></a>
+                                </div>
+                                <h3 class="title"><a href="" th:text="${book.name}">这是一个很长的产品标题</a></h3>
+                                <p class="price"><span class="num" th:text="${book.price}">1234</span>元</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="brick-item-container">
+                            <div class="brick-item brick-item-s">
+                                <div class="figure-more">
+                                    <a href=""><i class="fa fa-arrow-circle-o-right"></i></a>
+                                </div>
+                                <a href="" class="more">
+                                    浏览更多
+                                    <small>热门</small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </th:block>
     </div>
 </div>
 

@@ -57,8 +57,8 @@
                     </div>
                     <div class="box-bd">
                         <ul class="uc-nav-list">
-                            <li><a href="">个人信息</a></li>
-                            <li><a href="">修改密码</a></li>
+                            <li><a th:href="@{/pass/security}">个人信息</a></li>
+                            <li><a th:href="@{/pass/security#service=setPassword}">修改密码</a></li>
                         </ul>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
     </div>
 </div>
 
-<div layout:fragment="scripts">
+<th:block layout:fragment="scripts">
     <script th:inline="javascript">
         var activeNavItem = /*[[${activeNavItem}]]*/ null;
         jQuery(".uc-nav-box .uc-nav-list li").each(function () {
@@ -83,10 +83,10 @@
             }
         });
     </script>
-    <div layout:fragment="user_center_scripts" th:remove="tag">
+    <th:block layout:fragment="user_center_scripts">
 
-    </div>
-</div>
+    </th:block>
+</th:block>
 
 </body>
 </html>
