@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="minimum_layout">
+<head>
+    <link rel="stylesheet" th:href="@{/css/device_frame.css}"/>
+    <link rel="stylesheet" th:href="@{/css/home_login.css}"/>
+</head>
+<body>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.7/dist/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/webjars/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+<div class="container text-center" layout:fragment="content">
+    <div class="row wrap">
+        <div class="col-lg-offset-1 col-lg-10">
+            <div class="layout">
+                <div class="n-frame device-frame reg_frame">
+                    <div class="external-logo-area">
+                        <img src="" th:src="@{/image/logo/logo-64x64.png}"/>
+                    </div>
+                    <div class="title-item t_c">
+                        <h2>Mystery 帐号登录</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-offset-3 col-lg-6 register-box">
+                            <div class="login_area">
+                                <form th:action="@{/login}" method="POST" id="login-main-form">
+                                    <div class="lgn_inputbg c_b">
+                                        <input class="input-lg form-control" type="text" placeholder="邮箱"
+                                               name="username"/>
+                                        <input class="input-lg form-control" type="password" placeholder="密码"
+                                               name="password"/>
+                                        <div class="checkbox-inline pull-left">
+                                            <label>
+                                                <input type="checkbox" class=""/>
+                                                记住我
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="btns_bg">
+                                        <button class="btn btn-lg btnadpt btn_orange" type="submit">立即登录</button>
+                                    </div>
+                                </form>
+
+                                <div class="n_links_area" id="custom_display_64">
+                                    <a class="outer-link" th:href="@{/register}">注册 Mystery 帐号</a><span>|</span>
+                                    <a class="outer-link" href="#">忘记密码？</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

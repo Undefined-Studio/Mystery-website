@@ -1,0 +1,43 @@
+.login_area {
+    width: 358px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.lgn_inputbg {
+    margin-bottom: 20px;
+}
+
+.lgn_inputbg input {
+    margin-bottom: 15px;
+}
+
+.btns_bg {
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+.btnadpt {
+    width: 100%;
+    display: block;
+    margin-bottom: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn_orange {
+    background-color: #ef5b00;
+}
+
+.n_links_area {
+    padding-top: 30px;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.n_links_area a {
+    padding: 0 9px;
+    font-size: 14px;
+    color: #757575;
+}

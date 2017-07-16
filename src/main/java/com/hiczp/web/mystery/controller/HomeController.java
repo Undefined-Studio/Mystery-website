@@ -28,4 +28,10 @@ public class HomeController {
         modelAndView.setViewName("/home/register");
         return modelAndView;
     }
+
+    @GetMapping("/login")
+    public ModelAndView login(ModelAndView modelAndView) {
+        modelAndView.setViewName("/home/login");
+        return modelAndView;
+    }
 }
