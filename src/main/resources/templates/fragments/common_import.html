@@ -1,5 +1,5 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="head" th:remove="tag">
+<th:block th:fragment="head">
     <title>Mystery商城</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -13,10 +13,10 @@
     <!--th:href="@{/webjars/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css}"/>-->
     <link rel="stylesheet" href="/css/site.css"
           th:href="@{/css/site.css}"/>
-</head>
+</th:block>
 
 <body>
-<div th:fragment="script" th:remove="tag">
+<th:block th:fragment="script">
     <script src="/webjars/jquery/3.2.1/dist/jquery.min.js"
             th:src="@{/webjars/jquery/dist/jquery.min.js}"></script>
     <!--<script src="/webjars/jquery-validation/1.16.0/dist/jquery.validate.min.js"-->
@@ -25,6 +25,6 @@
             th:src="@{/webjars/bootstrap/dist/js/bootstrap.min.js}"></script>
     <!--<script src="/webjars/bootstrap3-dialog/1.35.3/dist/js/bootstrap-dialog.min.js"-->
     <!--th:src="@{/webjars/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js}"></script>-->
-</div>
+</th:block>
 </body>
 </html>

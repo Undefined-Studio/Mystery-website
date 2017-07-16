@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="minimum_layout">
+<head>
+    <link rel="stylesheet" th:href="@{/css/pass.css}"/>
+</head>
+<body>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.7/dist/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/webjars/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+<div class="container" layout:fragment="content" style="width: 75%">
+    <div class="row n-logo-area">
+        <div class="col-md-6">
+            <div class="pull-left">
+                <img src="/image/logo/logo-32x32.png"/>
+                <span class="logo-text">Mystery 账号</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <a class="pull-right logout" th:href="@{/logout}">退出</a>
+        </div>
+    </div>
+
+    <div class="n-account-area-box">
+        <div class="n-account-area clearfix">
+            <div class="na-info">
+                <p class="na-name" th:text="${account.nick}">陈志鹏</p>
+                <p class="na-num" th:text="${account.id}">354695627</p>
+            </div>
+            <div class="na-img-area fl-l">
+                <div class="na-img-bg-area">
+                    <img src="" th:with="avatar=${account.avatar}"
+                         th:src="@{${avatar==null||#strings.isEmpty(avatar)?'/image/avatar/default.jpg':avatar}}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="n-main-nav clearfix">
+            <ul class="list-unstyled">
+                <li>
+                    <a th:href="@{/pass/security}">账号安全</a>
+                    <em class="n-nav-corner"></em>
+                </li>
+                <li>
+                    <a th:href="@{/pass/profile}">个人信息</a>
+                    <em class="n-nav-corner"></em>
+                </li>
+                <li>
+                    <a th:href="@{/pass/sns}">绑定授权</a>
+                    <em class="n-nav-corner"></em>
+                </li>
+                <li>
+                    <a th:href="@{/pass/service}">线下服务</a>
+                    <em class="n-nav-corner"></em>
+                </li>
+            </ul>
+        </div>
+
+        <div class="n-frame" layout:fragment="pass_content">
+
+        </div>
+    </div>
+</div>
+
+<th:block layout:fragment="scripts">
+    <script th:inline="javascript">
+        jQuery(".n-main-nav li em").each(function () {
+            jQuery(this).css("background-image", "url(/*[[@{/image/icon/passport/n-layout-corner.png}]]*/null)");
+        });
+
+        var activeNavItem = /*[[${activeNavItem}]]*/ null;
+        jQuery(".n-main-nav li").each(function () {
+            var li = jQuery(this);
+            if (li.find("a").text() === activeNavItem) {
+                li.addClass("current");
+            }
+        });
+    </script>
+    <th:block layout:fragment="pass_scripts">
+
+    </th:block>
+</th:block>
+
+</body>
+</html>

@@ -57,8 +57,8 @@
                     </div>
                     <div class="box-bd">
                         <ul class="uc-nav-list">
-                            <li><a th:href="@{/pass/security}">个人信息</a></li>
-                            <li><a th:href="@{/pass/security#service=setPassword}">修改密码</a></li>
+                            <li><a th:href="@{/pass/security}" target="_blank">个人信息</a></li>
+                            <li><a th:href="@{/pass/security#service=setPassword}" target="_blank">修改密码</a></li>
                         </ul>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
         var activeNavItem = /*[[${activeNavItem}]]*/ null;
         jQuery(".uc-nav-box .uc-nav-list li").each(function () {
             var li = jQuery(this);
-            if (li.text() === activeNavItem) {
+            if (li.find("a").text() === activeNavItem) {
                 li.addClass("active");
             }
         });

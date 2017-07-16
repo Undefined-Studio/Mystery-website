@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="pass_layout">
+<head>
+    <link rel="stylesheet" th:href="@{/css/pass_security.css}"/>
+</head>
+<body>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.7/dist/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/webjars/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+<div class="n-frame" layout:fragment="pass_content">
+    <div class="title-item title_security_wap">
+        <h4 class="title-big dis-inb">安全等级</h4>
+        <em class="space6"></em>
+        <p class="font-normal dis-inb wap_colb2"><em class="light-num" style="padding:0">
+            <span class="score_2">65</span>
+        </em>分</p>
+        <div class="slider-area dis-inb vert-m" style="width:360px;">
+            <div class="slider-bar-bg"></div>
+            <div class="slider-bar-line score_bg_2" style="width:65%;"></div>
+            <em class="drag-ico" style="left:65%"></em>
+        </div>
+        <p class="font-normal dis-inb security_level_txt">
+            <span class="score_outer_2">存在<em class="light-num">2</em>项风险</span>
+        </p>
+    </div>
+
+    <ul class="device-detail-area list-unstyled">
+        <li id="changePassword" class="click-row">
+            <div class="font-img-item clearfix">
+                <em class="fi-ico fa fa-lock text-center"></em>
+                <p class="title-normal dis-inb">帐号密码</p>
+                <p class="font-default">用于保护帐号信息和登录安全</p>
+                <span class="title-normal wap-desc dis_none_pc">修改</span>
+                <i class="arrow_r"></i>
+            </div>
+            <div class="ada-btn-area" id="btnUpdatePassword">
+                <a class="n-btn">修改</a>
+            </div>
+        </li>
+        <li id="changeEmail" class="click-row">
+            <div class="font-img-item clearfix">
+                <em class="fi-ico fa fa-envelope text-center"></em>
+                <p class="title-normal dis-inb">安全邮箱</p>
+                <span class="warning-tip">&nbsp;</span>
+                <span class="title-normal wap-desc">
+			  <span class="color-active">未绑定</span>
+			  </span>
+                <p class="font-default color-active">安全邮箱将可用于登录 Mystery 帐号和重置密码，建议立即设置</p>
+                <i class="arrow_r"></i>
+            </div>
+            <div class="ada-btn-area" id="btnUpdateEmail">
+                <a class="n-btn">绑定</a>
+            </div>
+        </li>
+        <li id="changeMobile" class="click-row">
+            <div class="font-img-item clearfix">
+                <em class="fi-ico fa fa-phone text-center"></em>
+                <p class="title-normal dis-inb">安全手机</p>
+                <span class="title-normal wap-desc">
+                    153******71
+                    <span class="ph_list_sum phone-list-sum"></span>
+				</span>
+                <div class="wap-info">
+                    153******71
+                </div>
+                <p class="font-default">安全手机可以用于登录 Mystery 帐号，重置密码或其他安全验证</p>
+                <i class="arrow_r"></i>
+            </div>
+            <div class="ada-btn-area" id="btnUpdatePhone">
+                <a class="n-btn btnBindMobile" data-mode="add">添加</a>
+                <a class="n-btn btnChangeMobile" data-mode="update">
+                    修改
+                </a>
+            </div>
+        </li>
+        <li style="display:none;" id="setMibao" class="click-row">
+            <div class="font-img-item clearfix">
+                <em class="fi-ico fi-ico-secret"></em>
+                <p class="title-normal dis-inb">密保问题</p>
+                <span class="warning-tip">&nbsp;</span>
+                <span class="title-normal wap-desc">
+                  <span class="color-active">未设置</span>
+                </span>
+                <p class="font-default color-active">密保问题用于安全验证，建议立即设置</p>
+                <i class="arrow_r"></i>
+            </div>
+            <div class="ada-btn-area" id="btnSetMibao">
+                <a id="mibao_link" class="n-btn">设置</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

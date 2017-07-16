@@ -1,0 +1,283 @@
+p {
+    margin: 0;
+}
+
+.logo-text {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.logout {
+    font-size: 14px;
+    color: #ababab;
+}
+
+.n-logo-area {
+    padding-bottom: 30px;
+}
+
+.n-main-nav {
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -1px;
+}
+
+.n-main-nav ul {
+    width: 73%;
+    overflow: hidden;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.n-main-nav li {
+    float: left;
+    text-align: center;
+    max-width: 25%;
+    height: 44px;
+    overflow: hidden;
+}
+
+.n-main-nav li a {
+    display: block;
+    padding: 0 34px;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.n-main-nav li.current a, .n-main-nav li a:hover {
+    color: #ff7e00;
+}
+
+.n-account-area-box {
+    display: block;
+}
+
+.n-account-area {
+    overflow: hidden;
+    position: absolute;
+    right: 200px;
+    top: 100px;
+}
+
+.na-info {
+    width: 120px;
+    text-align: right;
+    padding-top: 16px;
+    margin-right: 10px;
+    float: left;
+}
+
+.na-name {
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+}
+
+.na-num {
+    position: relative;
+    z-index: 10;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+
+.na-img-area {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #e3e3e3;
+    border-radius: 50%;
+    padding: 4px;
+    background: #fff;
+    position: relative;
+    z-index: 4;
+    cursor: default;
+}
+
+:root .na-img-bg-area {
+    background: none;
+}
+
+.na-img-area img {
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    height: 68px;
+    width: 68px;
+}
+
+.n-frame {
+    background: #fff;
+    padding: 34px;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    min-height: 400px;
+}
+
+.n-main-nav li.current .n-nav-corner {
+    display: inline-block;
+}
+
+.n-nav-corner {
+    width: 23px;
+    height: 12px;
+    margin-top: 12px;
+    margin-bottom: -2px;
+    _margin-bottom: -5px;
+    display: none;
+    background: 0 0 no-repeat;
+}
+
+.title-item {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+    clear: both;
+}
+
+.title-big, .title-bigger, .title-biggest, .title-normal, .title_big30 {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.space6, .space12, .space14, .space16 {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+}
+
+.font-default, .font-normal, .font-big {
+    color: #9d9d9d;
+    line-height: 1.5;
+}
+
+.dis-inb {
+    display: inline-block;
+}
+
+.light-num {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff7e00;
+    padding: 0 2px;
+}
+
+.slider-area {
+    position: relative;
+}
+
+.slider-bar-bg {
+    border: 1px solid #ddd;
+    background: #e6e6e6;
+    height: 4px;
+    overflow: hidden;
+}
+
+.slider-bar-line {
+    background: #ec6a3d;
+    height: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.drag-ico {
+    display: inline-block;
+    zoom: 1;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 200px;
+    top: -6px;
+    z-index: 2;
+    background: 0 0 no-repeat;
+}
+
+.font-default, .font-normal, .font-big {
+    color: #9d9d9d;
+    line-height: 1.5;
+}
+
+.device-detail-area {
+    position: relative;
+    zoom: 1;
+    overflow: hidden;
+}
+
+.device-detail-area li {
+    padding: 30px 0;
+    position: relative;
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: -1px;
+}
+
+.device-detail-area .font-img-item {
+    margin-left: -10px;
+}
+
+.font-img-item {
+    position: relative;
+    overflow: hidden;
+    padding: 0 0 0 56px;
+    height: 42px;
+}
+
+.font-img-item .fi-ico {
+    position: absolute;
+    left: 10px;
+    top: 0;
+}
+
+.fi-ico {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    background: 0 0 no-repeat;
+}
+
+.device-detail-area .title-normal {
+    vertical-align: middle;
+}
+
+.wap-info, .wap_tokenstore, .device-detail-area .arrow_r {
+    display: none;
+}
+
+.device-detail-area .ada-btn-area {
+    position: absolute;
+    top: 40px;
+    right: 0;
+}
+
+.n-btn {
+    display: inline-block;
+    line-height: normal !important;
+    color: #555;
+    border: 1px solid #e8e8e8;
+    padding: 7px 40px;
+    background: #fff;
+    overflow: visible;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.n-btn:hover {
+    background: #f3f3f4;
+}

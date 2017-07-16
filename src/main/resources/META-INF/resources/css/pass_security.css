@@ -1,0 +1,27 @@
+.title-big {
+    font-size: 20px;
+}
+
+.space6 {
+    width: 6px;
+}
+
+.score_2 {
+    color: rgb(255, 102, 0);
+}
+
+.score_bg_2 {
+    background-color: rgb(255, 102, 0);
+}
+
+.font-normal {
+    font-size: 14px;
+}
+
+.security_level_txt {
+    margin-left: 20px;
+}
+
+.score_outer_2 em {
+    color: rgb(255, 102, 0);
+}
