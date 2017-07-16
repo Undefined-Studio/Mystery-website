@@ -1,5 +1,6 @@
 p {
     margin: 0;
+    padding: 0;
 }
 
 .logo-text {
@@ -280,4 +281,30 @@ p {
 
 .n-btn:hover {
     background: #f3f3f4;
+}
+
+.color4a9 {
+    color: #4a90e3;
+}
+
+.marauto {
+    margin: 0 auto;
+}
+
+.fdata {
+    padding-left: 20px;
+    line-height: 40px !important;
+    border-bottom: 2px solid #e6e6e6;
+    overflow: hidden;
+}
+
+.fdata h3 {
+    font-size: 16px;
+    color: #333;
+    line-height: 40px !important;
+    font-weight: bold;
+}
+
+.fr {
+    float: right;
 }

@@ -1,0 +1,40 @@
+.uinfo {
+    font-size: 14px;
+}
+
+.naInfoImgBox {
+    padding: 100px 20px 0;
+}
+
+.t_c {
+    text-align: center;
+}
+
+.na-img-area {
+    cursor: default;
+}
+
+:root .na-img-bg-area {
+    background: none;
+}
+
+.na-edit {
+    position: absolute;
+    top: 23px;
+    left: 23px;
+    display: none;
+    width: 43px;
+    height: 43px;
+}
+
+.naImgLink {
+    padding-top: 15px;
+}
+
+.framedatabox {
+    padding-top: 15px;
+}
+
+.logout_wap, .btn_editinfo {
+    display: none;
+}

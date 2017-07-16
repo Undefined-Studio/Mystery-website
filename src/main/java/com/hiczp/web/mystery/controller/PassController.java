@@ -17,4 +17,10 @@ public class PassController {
     public ModelAndView security(ModelAndView modelAndView) {
         return modelAndView;
     }
+
+    @GetMapping("/profile")
+    @ActiveNavItem("个人信息")
+    public ModelAndView profile(ModelAndView modelAndView) {
+        return modelAndView;
+    }
 }
